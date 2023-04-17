@@ -8,9 +8,8 @@ class CoursesController < ApplicationController
 
   def show
     the_id = params.fetch("path_id")
-
+    # binding.pry
     matching_courses = Course.where({ :id => the_id })
-
     @the_course = matching_courses.at(0)
 
     render({ :template => "courses/show.html.erb" })
